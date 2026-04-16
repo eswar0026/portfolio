@@ -9,23 +9,7 @@ body {
   color: white;
 }
 
-header {
-  text-align: center;
-  padding: 40px;
-  background: #1e293b;
-}
-
-section {
-  padding: 30px;
-  margin: 20px;
-  background: #1e293b;
-  border-radius: 10px;
-}
-
-h2 {
-  color: #38bdf8;
-}
-
+/* Navbar */
 nav {
   background: #020617;
   padding: 15px;
@@ -48,29 +32,11 @@ nav a:hover {
   color: white;
 }
 
+/* Header */
 header {
   text-align: center;
   padding: 60px 20px;
   background: linear-gradient(to right, #0f172a, #1e293b);
-}
-
-section {
-  padding: 30px;
-  margin: 20px;
-  background: #1e293b;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-section:hover {
-  transform: scale(1.02);
-}
-
-.project {
-  background: #020617;
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 8px;
 }
 
 .btn {
@@ -86,4 +52,45 @@ section:hover {
 
 .btn:hover {
   background: white;
+}
+
+/* Sections */
+section {
+  padding: 30px;
+  margin: 20px;
+  background: #1e293b;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+section:hover {
+  transform: scale(1.02);
+}
+
+h2 {
+  color: #38bdf8;
+}
+
+/* Skills */
+.skills span {
+  display: inline-block;
+  background: #020617;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 20px;
+}
+
+/* Projects */
+.project {
+  background: #020617;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
 }
