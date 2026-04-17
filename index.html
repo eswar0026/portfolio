@@ -2,77 +2,211 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio</title>
+  <title>Eswar Portfolio</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <ul>
+<!-- Navbar -->
+<nav>
+  <h2 class="logo">Eswar.dev</h2>
+
+  <div class="nav-right">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-  </nav>
 
-  <!-- Header -->
-  <header>
-    <h1>Eswar Venkata Satyanarayana Chirapa</h1>
-    <p>Web Developer | CSIT Student</p>
-    <p>I build modern web applications using React and JavaScript.</p>
-    <a href="#projects" class="btn">View My Work</a>
-  </header>
-
-  <!-- About -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a Computer Science and Information Technology student with strong interest in web development and problem solving.
-    </p>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>Python</span>
-      <span>C++</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>React</span>
-      <span>DSA</span>
+    <div class="nav-socials">
+      <a href="https://github.com/eswar0026" target="_blank">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/eswar-venkata-satyanarayana-chirapa-85a3a5278" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
     </div>
-  </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+  </div>
+</nav>
 
+<!-- Hero -->
+<header>
+  <div class="hero-content">
+    <h1 id="typing-text"></h1>
+    <p id="typing-role"></p>
+    <a href="#projects" class="btn">View My Work</a>
+  </div>
+
+  <img src="image.jpg" class="profile">
+</header>
+
+<!-- About -->
+<section id="about">
+  <h2>About Me</h2>
+
+  <div class="about-container">
+    <div class="about-text">
+
+      <ul>
+        <li>💻 CSIT student passionate about building modern web applications</li>
+        <li>🚀 Interested in scalable and user-friendly UI development</li>
+        <li>🧠 Skilled in <b>JavaScript, React, and Data Structures</b></li>
+        <li>📈 Focused on writing clean and efficient code</li>
+        <li>🏗️ Currently building real-world projects</li>
+        <li>🎯 Preparing for software development and full stack developer roles</li>
+        <li>🔥 Love solving real-world problems through code</li>
+      </ul>
+
+      <div class="about-details">
+        <p>📍 Location: India</p>
+        <p>🎓 Degree: B.Tech (CSIT)</p>
+        <p>💡 Focus: Full Stack Development & DSA</p>
+      </div>
+
+      <a href="resume.pdf" class="btn">Download Resume</a>
+    </div>
+
+    <div class="about-cards">
+      <div class="card">
+        <h3><span class="icon">🎯</span> Goal</h3>
+        <p>Become a Full Stack Developer</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon">💻</span> Interests</h3>
+        <p>Web Development, UI Design</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon">🚀</span> Learning</h3>
+        <p>React, DSA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>Python</span>
+    <span>C++</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>React</span>
+    <span>DSA</span>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="projects-grid">
     <div class="project">
       <h3>Portfolio Website</h3>
-      <p>Built using HTML and CSS. Deployed using GitHub Pages.</p>
+      <p>Built using HTML, CSS and deployed on GitHub Pages.</p>
     </div>
 
     <div class="project">
-      <h3>Task Tracker App (Coming Soon)</h3>
-      <p>A React-based app to track daily goals and tasks.</p>
+      <h3>Task Tracker (Coming Soon)</h3>
+      <p>React app to manage tasks.</p>
     </div>
+  </div>
+</section>
 
-  </section>
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: eswarchirapa@gmail.com</p>
+</section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: eswarchirapa@gmail.com</p>
-  </section>
+<footer>
+  <p>© 2026 Eswar</p>
+</footer>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Eswar CH</p>
-  </footer>
+<script>
+const toggle = document.getElementById("menu-toggle");
+const links = document.getElementById("nav-links");
+
+toggle.onclick = () => links.classList.toggle("show");
+
+/* 🔥 Scroll hide navbar */
+let lastScroll = 0;
+const navbar = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+  let currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll) {
+    navbar.style.top = "-80px";
+  } else {
+    navbar.style.top = "0";
+  }
+
+  lastScroll = currentScroll;
+});
+
+/* 🔥 Typing Effect */
+const nameText = "Hi, I'm Eswar Venkata Satyanarayana Chirapa 👋";
+const roleText = "Web Developer | React Enthusiast | Problem Solver";
+
+let i = 0;
+let j = 0;
+
+const nameEl = document.getElementById("typing-text");
+const roleEl = document.getElementById("typing-role");
+
+function typeName() {
+  nameEl.classList.add("typing");
+
+  if (i < nameText.length) {
+    nameEl.innerHTML += nameText.charAt(i);
+    i++;
+    setTimeout(typeName, 50);
+  } else {
+    nameEl.classList.remove("typing"); // stop cursor here
+    setTimeout(typeRole, 300);
+  }
+}
+
+function typeRole() {
+  roleEl.classList.add("typing");
+
+  if (j < roleText.length) {
+    roleEl.innerHTML += roleText.charAt(j);
+    j++;
+    setTimeout(typeRole, 40);
+  } else {
+    roleEl.classList.remove("typing"); // stop final cursor
+  }
+}
+
+typeName();
+
+/* Scroll Reveal Animation */
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  const trigger = window.innerHeight * 0.85;
+
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+
+    if (top < trigger) {
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
