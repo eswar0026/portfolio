@@ -467,3 +467,9 @@ footer {
   transform: scale(1.1);
   background: white;
 }
+
+/* 🔥 FIX: certificate button clickable */
+.card::before,
+.card::after {
+  pointer-events: none;
+}
