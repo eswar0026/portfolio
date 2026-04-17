@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  <div id="progress-bar"></div>
 
 <!-- Navbar -->
 <nav>
@@ -20,6 +21,8 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -33,7 +36,11 @@
       </a>
     </div>
 
-    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </nav>
 
@@ -71,7 +78,7 @@
         <p>💡 Focus: Full Stack Development & DSA</p>
       </div>
 
-      <a href="resume.pdf" class="btn">Download Resume</a>
+      <a href="resume.pdf" class="btn">View Resume</a>
     </div>
 
     <div class="about-cards">
@@ -107,6 +114,66 @@
   </div>
 </section>
 
+<!-- Education -->
+<section id="education">
+  <h2>Education</h2>
+
+  <div class="education-grid">
+
+    <div class="card">
+      <h3>🎓 B.Tech in Computer Science (CSIT)</h3>
+      <p>SRKR Engineering College, Bhimavaram</p>
+      <p>2024 – 2027</p>
+      <p>CGPA: 7.95 (Present)</p>
+    </div>
+
+    <div class="card">
+      <h3>📘 Diploma</h3>
+      <p>SMT. B. Seetha Polytechnic, Bhimavaram</p>
+      <p>2021 – 2024</p>
+      <p>Percentage: 90.34%</p>
+    </div>
+
+    <div class="card">
+      <h3>🏫 10th Standard</h3>
+      <p>Sri Chaitanya, Penugonda</p>
+      <p>2020 – 2021</p>
+      <p>CGPA: 10/10</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+  <h2>Experience & Achievements</h2>
+
+  <div class="education-grid">
+
+    <div class="card">
+      <h3>💼 Associate Software Engineer Intern</h3>
+      <p><b>Tech Nirmaan, Hyderabad</b></p>
+      <p>Dec 2025 (30 days)</p>
+      <p>
+        Worked on product development activities and contributed to internal technical initiatives. 
+        Gained hands-on experience in a professional development environment.
+      </p>
+      <a href="technirmaan.pdf" target="_blank" class="btn">View Certificate</a>
+    </div>
+
+    <div class="card">
+      <h3>🏆 Web Tech Hackathon Participant</h3>
+      <p><b>SRKR Engineering College</b></p>
+      <p>
+        Participated in a Web Technology Hackathon focused on building innovative solutions 
+        and improving problem-solving skills in a competitive environment.
+      </p>
+      <a href="Hackathon.pdf" target="_blank" class="btn">View Certificate</a>
+    </div>
+
+  </div>
+</section>
+
 <!-- Projects -->
 <section id="projects">
   <h2>Projects</h2>
@@ -127,18 +194,39 @@
 <!-- Contact -->
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: eswarchirapa@gmail.com</p>
+  <p>Email: 
+  <a href="mailto:eswarchirapa@gmail.com">
+    eswarchirapa@gmail.com
+  </a>
+  </p>
+  <p>Phone: 
+  <a href="tel:+917995918618">
+    +91 7995918618
+  </a>
+</p>
 </section>
 
 <footer>
   <p>© 2026 Eswar</p>
 </footer>
 
+<button id="topBtn">↑</button>
+
 <script>
 const toggle = document.getElementById("menu-toggle");
 const links = document.getElementById("nav-links");
 
-toggle.onclick = () => links.classList.toggle("show");
+toggle.onclick = () => {
+  links.classList.toggle("show");
+  toggle.classList.toggle("active");
+
+  // 🔥 Disable scroll when menu open
+  if (links.classList.contains("show")) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+};
 
 /* 🔥 Scroll hide navbar */
 let lastScroll = 0;
@@ -193,6 +281,42 @@ function typeRole() {
 
 typeName();
 
+// 🔥 Active link highlight on scroll
+const sectionsAll = document.querySelectorAll("section");
+const navLinksAll = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sectionsAll.forEach(section => {
+    const sectionTop = section.offsetTop - 80;
+
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinksAll.forEach(link => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+
+// 🔥 Auto close menu + enable scroll
+const navItems = document.querySelectorAll(".nav-links a");
+
+navItems.forEach(item => {
+  item.addEventListener("click", () => {
+    links.classList.remove("show");
+
+    // enable scroll again
+    document.body.style.overflow = "auto";
+  });
+});
+
 /* Scroll Reveal Animation */
 const sections = document.querySelectorAll("section");
 
@@ -207,6 +331,35 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+// 🔥 Scroll Progress Bar
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+
+  const scrollPercent = (scrollTop / docHeight) * 100;
+
+  document.getElementById("progress-bar").style.width = scrollPercent + "%";
+});
+
+const topBtn = document.getElementById("topBtn");
+
+// Show button when scrolling
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    topBtn.style.display = "block";
+  } else {
+    topBtn.style.display = "none";
+  }
+});
+
+// Scroll to top on click
+topBtn.onclick = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
 </script>
 
 </body>
