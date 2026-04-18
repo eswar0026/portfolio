@@ -13,9 +13,7 @@
 <body>
   <div id="overlay"></div>
   <div id="progress-bar"></div>
-  <div id="loader">
-    <div class="spinner"></div>
-  </div>
+
 
 <!-- Navbar -->
 <nav>
@@ -60,7 +58,7 @@
 </header>
 
 <!-- About -->
-<section id="about">
+<section id="about" class="fade-up">
   <h2>About Me</h2>
 
   <div class="about-container">
@@ -105,7 +103,7 @@
 </section>
 
 <!-- Skills -->
-<section id="skills">
+<section id="skills" class="fade-left">
   <h2>Skills</h2>
   <div class="skills">
     <span>Python</span>
@@ -119,7 +117,7 @@
 </section>
 
 <!-- Education -->
-<section id="education">
+<section id="education" class="fade-right">
   <h2>Education</h2>
 
   <div class="education-grid">
@@ -149,7 +147,7 @@
 </section>
 
 <!-- Experience -->
-<section id="experience">
+<section id="experience" class="fade-up">
   <h2>Experience & Achievements</h2>
 
   <div class="education-grid">
@@ -179,7 +177,7 @@
 </section>
 
 <!-- Projects -->
-<section id="projects">
+<section id="projects" class="zoom-in">
   <h2>Projects</h2>
 
   <div class="projects-grid">
@@ -216,8 +214,7 @@
 </section>
 
 <!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
+<section id="contact" class="fade-up">  <h2>Contact</h2>
   <p>Email: 
   <a href="mailto:eswarchirapa@gmail.com">
     eswarchirapa@gmail.com
@@ -397,16 +394,7 @@ topBtn.onclick = () => {
   });
 };
 
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
 
-  loader.style.opacity = "0";
-  loader.style.transition = "0.5s";
-
-  setTimeout(() => {
-    loader.style.display = "none";
-  }, 500);
-});
 </script>
 
 </body>
