@@ -111,11 +111,11 @@ nav {
   transform: scale(1.2);
 }
 
-/* Hamburger Icon (FIXED) */
+/* Hamburger Icon */
 .menu-toggle {
   width: 20px;
   height: 20px;
-  display: none; /* 🔥 desktop lo hide */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
@@ -272,7 +272,7 @@ section.show {
   transform: translateX(100%) rotate(25deg);
 }
 
-/* Projects Card (same as .card) */
+/* Projects Card */
 .project {
   background: linear-gradient(145deg, #020617, #0f172a);
   padding: 20px;
@@ -387,7 +387,7 @@ section.show {
   justify-content: center;
   gap: 25px;
 
-  transform: translateX(100%); /* 🔥 smooth slide */
+  transform: translateX(100%);
   opacity: 0;
 
   transition: transform 0.4s ease, opacity 0.3s ease;
@@ -476,13 +476,11 @@ footer {
   background: white;
 }
 
-/* 🔥 FIX: certificate button clickable */
 .card::before,
 .card::after {
   pointer-events: none;
 }
 
-/* 🔥 Dark Overlay */
 #overlay {
   position: fixed;
   top: 0;
@@ -571,7 +569,6 @@ footer {
   opacity: 1;
 }
 
-/* 🔥 FIX: project buttons clickable */
 .project::before,
 .project::after {
   pointer-events: none;
