@@ -11,7 +11,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  <div id="overlay"></div>
   <div id="progress-bar"></div>
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
 
 <!-- Navbar -->
 <nav>
@@ -179,16 +183,36 @@
   <h2>Projects</h2>
 
   <div class="projects-grid">
-    <div class="project">
-      <h3>Portfolio Website</h3>
-      <p>Built using HTML, CSS and deployed on GitHub Pages.</p>
-    </div>
 
-    <div class="project">
-      <h3>Task Tracker (Coming Soon)</h3>
-      <p>React app to manage tasks.</p>
+  <div class="project">
+    <a href="https://eswar0026.github.io/portfolio/" target="_blank" class="project-img">
+  <img src="project1.jpg" alt="Portfolio Project">
+
+  <div class="overlay">
+    <p>Live</p>
+  </div>
+</a>
+
+    <h3>Portfolio Website</h3>
+    <p>Built using HTML, CSS and deployed on GitHub Pages.</p>
+
+    <div class="project-buttons">
+      <a href="https://github.com/eswar0026/portfolio" target="_blank" class="btn">GitHub</a>
+      <a href="https://eswar0026.github.io/portfolio/" target="_blank" class="btn">Live</a>
     </div>
   </div>
+
+  <div class="project">
+    <h3>Next Project (Coming Soon)</h3>
+    <p>New project will be added soon.</p>
+
+    <div class="project-buttons">
+      <a href="#" class="btn">GitHub</a>
+      <a href="#" class="btn">Coming Soon</a>
+    </div>
+  </div>
+
+</div>
 </section>
 
 <!-- Contact -->
@@ -215,10 +239,12 @@
 <script>
 const toggle = document.getElementById("menu-toggle");
 const links = document.getElementById("nav-links");
+const overlay = document.getElementById("overlay");
 
 toggle.onclick = () => {
   links.classList.toggle("show");
   toggle.classList.toggle("active");
+  overlay.classList.toggle("show");
 
   // 🔥 Disable scroll when menu open
   if (links.classList.contains("show")) {
@@ -226,6 +252,14 @@ toggle.onclick = () => {
   } else {
     document.body.style.overflow = "auto";
   }
+};
+
+overlay.onclick = () => {
+  links.classList.remove("show");
+  toggle.classList.remove("active");
+  overlay.classList.remove("show");
+
+  document.body.style.overflow = "auto";
 };
 
 /* 🔥 Scroll hide navbar */
@@ -311,6 +345,8 @@ const navItems = document.querySelectorAll(".nav-links a");
 navItems.forEach(item => {
   item.addEventListener("click", () => {
     links.classList.remove("show");
+    toggle.classList.remove("active");
+    overlay.classList.remove("show");
 
     // enable scroll again
     document.body.style.overflow = "auto";
@@ -360,6 +396,17 @@ topBtn.onclick = () => {
     behavior: "smooth"
   });
 };
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  loader.style.opacity = "0";
+  loader.style.transition = "0.5s";
+
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 500);
+});
 </script>
 
 </body>
