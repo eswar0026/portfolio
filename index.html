@@ -80,7 +80,7 @@
         <p>💡 Focus: Full Stack Development & DSA</p>
       </div>
 
-      <a href="resume.pdf" class="btn">View Resume</a>
+      <a href="resume.pdf" target="_blank" class="btn">View Resume</a>
     </div>
 
     <div class="about-cards">
@@ -243,7 +243,6 @@ toggle.onclick = () => {
   toggle.classList.toggle("active");
   overlay.classList.toggle("show");
 
-  // 🔥 Disable scroll when menu open
   if (links.classList.contains("show")) {
     document.body.style.overflow = "hidden";
   } else {
@@ -259,7 +258,7 @@ overlay.onclick = () => {
   document.body.style.overflow = "auto";
 };
 
-/* 🔥 Scroll hide navbar */
+
 let lastScroll = 0;
 const navbar = document.querySelector("nav");
 
@@ -275,7 +274,6 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 });
 
-/* 🔥 Typing Effect */
 const nameText = "Hi, I'm Eswar Venkata Satyanarayana Chirapa 👋";
 const roleText = "Web Developer | React Enthusiast | Problem Solver";
 
@@ -293,7 +291,7 @@ function typeName() {
     i++;
     setTimeout(typeName, 50);
   } else {
-    nameEl.classList.remove("typing"); // stop cursor here
+    nameEl.classList.remove("typing");
     setTimeout(typeRole, 300);
   }
 }
@@ -306,13 +304,12 @@ function typeRole() {
     j++;
     setTimeout(typeRole, 40);
   } else {
-    roleEl.classList.remove("typing"); // stop final cursor
+    roleEl.classList.remove("typing");
   }
 }
 
 typeName();
 
-// 🔥 Active link highlight on scroll
 const sectionsAll = document.querySelectorAll("section");
 const navLinksAll = document.querySelectorAll(".nav-links a");
 
@@ -336,7 +333,6 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// 🔥 Auto close menu + enable scroll
 const navItems = document.querySelectorAll(".nav-links a");
 
 navItems.forEach(item => {
@@ -350,7 +346,6 @@ navItems.forEach(item => {
   });
 });
 
-/* Scroll Reveal Animation */
 const sections = document.querySelectorAll("section");
 
 window.addEventListener("scroll", () => {
@@ -365,7 +360,6 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// 🔥 Scroll Progress Bar
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
   const docHeight = document.body.scrollHeight - window.innerHeight;
@@ -377,7 +371,6 @@ window.addEventListener("scroll", () => {
 
 const topBtn = document.getElementById("topBtn");
 
-// Show button when scrolling
 window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
     topBtn.style.display = "block";
@@ -386,7 +379,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Scroll to top on click
 topBtn.onclick = () => {
   window.scrollTo({
     top: 0,
